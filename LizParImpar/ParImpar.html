@@ -1,0 +1,47 @@
+<!DOCTYPE >
+<html>
+<head>
+  <link rel="stylesheet" href="../css/estilo.css">
+
+<title>Funciones básicas</title>  
+
+</head>  
+<body>
+  <div class="contenedor">
+    <ul>
+        <li><a class="active" href="../index.html">PRINCIPAL</a></li>
+        <li><a href="../LizParImpar/ParImpar.html">Par e Impar</a></li>
+        <li><a href="../LizConversionBinHex/Conversion.html">Conversiones Binario/Hexadecimal</a></li>
+        <li><a href="../LizNuevaVentana/NuevaVent.html">Nueva página </a></li>
+        <li><a href="../LizExamnTablasMult/ExTablasMult.html">Examen de Tablas de Multiplicar</a></li>
+        <li><a href="../LizZodiaco/Zodiaco.html">Sígno del Zodiaco</a></li>
+        <li><a href="../LizValidaDOMNumEnl/ValidaDOM.html">Validad DOM número enlaces</a></li>
+        <li><a href="../LizMuestra-OcultaParrafos/MostrarOcultarParrafo.html">Mostrar/Ocultar Parrafos</a></li>
+        <li><a href="../LizAdivinaNumero/AdivinaNum.html">Adivinar Número</a></li>
+        <li><a href="#">PRACTICA 1</a></li>
+
+      </ul>
+  </div>
+<center>
+  <br><br><br><br><br><br><br>
+  <h1>Programa que verifica si un n&uacute;mero es par</h1>
+  <br>
+  <form >
+     <label >Introduce el numero</label>
+     <input type="text" name="numero" value="">
+     <button type="button" onclick="esPar(numero.value)">Verificar</button>
+  </form>
+</center>
+<script type="text/javascript">
+    function esPar(numero){
+       var resultado = parImpar(numero);
+       alert("El número "+numero+" es "+resultado);  
+    }
+
+function parImpar(numero) {
+      if(numero % 2 == 0)  return "par";
+      else return "impar";
+ }
+</script>
+</body>
+</html>

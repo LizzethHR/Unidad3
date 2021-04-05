@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>BINARIO</title>
+<script type="text/javascript">
+	function cierra(){
+		if (confirm("¿Quieres cerrar la ventana?")){
+			window.close();
+
+		}
+	}
+</script>
+</head>
+<body>
+	<h1> Conversiones a Binario</h1>
+	<FORM >
+		 <label >Introduce el numero</label>
+		 <input type="text"   id="num" name="numero" value="">
+		 <button type="button" onclick="Verbin(num.value)">convertir</button>
+		 <button type="button" onclick="limpiar()">Limpiar Todos</button>
+
+	</FORM>
+
+	<form>
+		<input type="button" onClick="cierra();" value="Cerrar"/>
+	</form>
+
+	<script type="text/javascript">
+
+	function limpiar(){
+
+	lista=document.querySelectorAll('p');
+
+	if(lista.length!=0){
+			i=lista.length-1;
+			while(i>-1)
+					 lista[i].parentNode.removeChild(lista[i--]);
+	}
+	else alert("No hay parrafos a eliminar");
+	}
+
+	function Verbin(numero){
+		   var resultado = Cbin(numero);
+			 parrafo = document.createElement("p");
+			 contenido = document.createTextNode("El número "+numero+" es "+resultado);  
+			 parrafo.appendChild(contenido);
+			 document.body.appendChild(parrafo);
+			 document.getElementById("num").value="";
+		}
+
+		function Cbin(numero) {
+        var convb="";
+         while(numero!=0){
+           convb= numero % 2+ convb;
+           numero=Math.floor(numero / 2);//devuelve el valor entero redondeado mas bajo de la variabe
+         }
+        return convb;
+     }
+
+	 </script>
+
+</body>
+</html>

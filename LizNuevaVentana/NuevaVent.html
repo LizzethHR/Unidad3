@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="PQG">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Selecciona la coonversion deseada</title>
+</head>
+
+<body>
+  <div class="contenedor">
+    <ul>
+        <li><a class="active" href="../index.html">PRINCIPAL</a></li>
+        <li><a href="../LizParImpar/ParImpar.html">Par e Impar</a></li>
+        <li><a href="../LizConversionBinHex/Conversion.html">Conversiones Binario/Hexadecimal</a></li>
+        <li><a href="../LizNuevaVentana/NuevaVent.html">Nueva página </a></li>
+        <li><a href="../LizExamnTablasMult/ExTablasMult.html">Examen de Tablas de Multiplicar</a></li>
+        <li><a href="../LizZodiaco/Zodiaco.html">Sígno del Zodiaco</a></li>
+        <li><a href="../LizValidaDOMNumEnl/ValidaDOM.html">Validad DOM número enlaces</a></li>
+        <li><a href="../LizMuestra-OcultaParrafos/ValidaDOM.html">Mostrar/Ocultar Parrafos</a></li>
+        <li><a href="../LizAdivinaNumero/AdivinaNum.html">Adivinar Número</a></li>
+        <li><a href="#">PRACTICA 3</a></li>
+
+      </ul>
+  </div>
+
+  <center>
+  <br><br><br><br><br><br><br>
+  <h1>-- Conversiones --</h1>
+  <label>Selecciona la conversion que deseas realizar</label>
+  <br><br>
+	<form>
+		<input type="button" onClick="Binario();" value="Binario"/>
+    <input type="button" onClick="Hexadecimal();" value="Hexadecimal"/>
+	</form>
+
+  <script type="text/javascript">
+		function Binario(){
+			window.open('conBinario.html','','toolbar=no, status=no, resizable');
+		}
+    function Hexadecimal(){
+			window.open('conHex.html','','toolbar=no, status=no, resizable');
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE >
+<head>
+  <link rel="stylesheet" href="../css/estilo.css">
+
+<title>Conversiones</title>
+<style>
+  label{
+    background:white;
+  }
+  }
+
+  </style>
+</head>  
+<body>
+  <div class="contenedor">
+    <ul>
+        <li><a class="active" href="../index.html">PRINCIPAL</a></li>
+        <li><a href="../LizParImpar/ParImpar.html">Par e Impar</a></li>
+        <li><a href="../LizConversionBinHex/Conversion.html">Conversiones Binario/Hexadecimal</a></li>
+        <li><a href="../LizNuevaVentana/NuevaVent.html">Nueva página </a></li>
+        <li><a href="../LizExamnTablasMult/ExTablasMult.html">Examen de Tablas de Multiplicar</a></li>
+        <li><a href="../LizZodiaco/Zodiaco.html">Sígno del Zodiaco</a></li>
+        <li><a href="../LizValidaDOMNumEnl/ValidaDOM.html">Validad DOM número enlaces</a></li>
+        <li><a href="../LizMuestra-OcultaParrafos/MostrarOcultarParrafo.html">Mostrar/Ocultar Parrafos</a></li>
+        <li><a href="../LizAdivinaNumero/AdivinaNum.html">Adivinar Número</a></li>
+        <li><a href="#">PRACTICA 2</a></li>
+
+      </ul>
+  </div>
+  <center>
+<br><br><br><br><br><br><br>
+    <h1>-- Programa Conversiones --</h1> <br>
+    <form >
+       <label >Introduce el numero</label>
+       <input type="text"   id="num" name="numero" value="">
+       <button type="button" onclick="Verbin(num.value)">Binarior</button>
+       <button type="button" onclick="Verhex(num.value)">Hexadecimal</button>
+
+       <!--
+         <button type="button" onclick="esPar(numero.value)">Verificar</button>
+       -->
+       <button type="button" onclick="limpiar()">Limpiar Todos</button>
+
+    </form>
+</center>
+    <script type="text/javascript">
+      function limpiar(){
+
+      lista=document.querySelectorAll('p');
+
+      if(lista.length!=0){
+          i=lista.length-1;  // posiciona en el último párrafo creado
+          while(i>-1)
+               lista[i].parentNode.removeChild(lista[i--]);
+      }
+      else alert("No hay parrafos a eliminar");
+    }
+
+      function Verbin(numero){
+           var resultado = Cbin(numero);
+           parrafo = document.createElement("p");
+           contenido = document.createTextNode("El número "+numero+" es "+resultado);  
+           parrafo.appendChild(contenido);
+           document.body.appendChild(parrafo);
+           document.getElementById("num").value="";
+        }
+
+        function Verhex(numero){
+             var resultado = Chex(numero);
+             parrafo = document.createElement("p");
+             contenido = document.createTextNode("El número "+numero+" es "+resultado);  
+             parrafo.appendChild(contenido);
+             document.body.appendChild(parrafo);
+             document.getElementById("num").value="";
+          }
+
+    function Cbin(numero) {
+        var convb="";
+         while(numero!=0){
+           convb= numero % 2+ convb;
+           numero=Math.floor(numero / 2);//devuelve el valor entero redondeado mas bajo de la variabe
+         }
+        return convb;
+     }
+
+     function Chex(numero){
+       var conHe="";
+       var digitosH= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A','B','C','D','E','F'];
+       var res=0
+
+       while (numero>0){
+         res= numero%16
+         digitos=digitosH[res];
+         conHe= digitos+conHe;
+          numero=Math.floor(numero / 16);
+       }
+       return conHe;
+
+
+    }
+</script>
+</body>
+</html>
